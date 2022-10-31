@@ -2,7 +2,7 @@ version: '3'
 
 services:
   phpipam-web:
-    image: phpipam-ngpf:v1.5.0
+    image: phpipam-ngpf:latest
     ports:
       - "80:80"
     environment:
@@ -15,7 +15,7 @@ services:
       - phpipam-mariadb
 
   phpipam-cron:
-    image: phpipam-ngpf-cron:v1.5.0
+    image: phpipam-ngpf-cron:latest
     environment:
       - TZ=Asia/Vladivostok
       - IPAM_DATABASE_HOST=phpipam-mariadb
