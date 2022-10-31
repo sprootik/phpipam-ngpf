@@ -5,7 +5,7 @@ Phpipam project - https://github.com/phpipam/phpipam
 
 
 # Container Images
-- `phpipam-ngpf` Frontend Nginx && Php-fpm. Nginx and Php-fpm can be run separately using the enviroment MODE. See [Composer](Composer/phpIPAM_separately.yml)
+- `phpipam-ngpf` Frontend Nginx && Php-fpm. Nginx and Php-fpm can be run separately using the enviroment MODE. See [Compose](Compose/phpIPAM_separately.yml)
 - `phpipam-ngpf-cron` Cron container for scheduled network discovery jobs.
 
 # Usage
