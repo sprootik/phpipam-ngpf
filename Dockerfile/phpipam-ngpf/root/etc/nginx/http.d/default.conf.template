@@ -1,0 +1,24 @@
+server {
+    # root directory
+    root   /phpipam;
+
+    # phpipam
+    location / {
+        try_files ${DLR}uri ${DLR}uri/ /index.php;
+        index index.php;
+    }
+    # phpipam - api
+    location /api/ {
+        try_files ${DLR}uri ${DLR}uri/ /api/index.php;
+    }
+
+    # php-fpm
+    location ~ \.php$ {
+        fastcgi_pass   ${PHP_FPM_HOST}:9000;
+        fastcgi_index  index.php;
+        try_files      ${DLR}uri ${DLR}uri/ index.php = 404;
+        include        fastcgi_params;
+	fastcgi_param SCRIPT_FILENAME ${DLR}document_root${DLR}fastcgi_script_name;
+        fastcgi_param PATH_INFO ${DLR}fastcgi_path_info;
+    }
+ }
