@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  phpipam-web:
+    image: phpipam-ngpf:v1.5.0
+    ports:
+      - "80:80"
+    environment:
+      - TZ=Asia/Vladivostok
+      - IPAM_DATABASE_HOST=phpipam-mariadb
+      - IPAM_DATABASE_PASS=dbuserpass
+      - IPAM_DATABASE_WEBHOST=%
+    restart: unless-stopped
+    depends_on:
+      - phpipam-mariadb
+
+  phpipam-cron:
+    image: phpipam-ngpf-cron:v1.5.0
+    environment:
+      - TZ=Asia/Vladivostok
+      - IPAM_DATABASE_HOST=phpipam-mariadb
+      - IPAM_DATABASE_PASS=dbuserpass
+      - SCAN_INTERVAL=5m
+    restart: unless-stopped
+    depends_on:
+      - phpipam-mariadb
+
+  phpipam-mariadb:
+    image: mariadb:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=dbrootpass
+      - TZ=Asia/Vladivostok
+    restart: unless-stopped
+    volumes:
+      - phpipam-ngpf-db-data:/var/lib/mysql
+
+volumes:
+  phpipam-ngpf-db-data:
+
+
+
+
+
+
+
+
