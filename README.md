@@ -1,6 +1,6 @@
 # phpipam-ngpf
 Docker container for phpipam with nginx and php-fpm - https://github.com/sprootik/phpipam-ngpf  
-Build scripts and dockerfiles for https://hub.docker.com/repository/docker/nixit89/phpipam-ngpf  
+Build scripts and dockerfiles for https://hub.docker.com/r/nixit89/phpipam-ngpf and https://hub.docker.com/r/nixit89/phpipam-ngpf-cron  
 Phpipam project - https://github.com/phpipam/phpipam
 
 
