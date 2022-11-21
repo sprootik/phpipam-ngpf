@@ -4,6 +4,8 @@ ARG VERSION="v1.5.0"
 ENV MODE=""
 ENV DLR="$"
 ENV PHP_FPM_HOST="127.0.0.1"
+ENV PHP_FPM_PORT="9000"
+ENV NGINX_PORT="80"
 
 LABEL name="phpIPAM Nginx & php-fpm Container" \
       version=$VERSION \

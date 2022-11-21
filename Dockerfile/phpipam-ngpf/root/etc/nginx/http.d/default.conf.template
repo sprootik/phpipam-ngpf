@@ -1,5 +1,6 @@
 server {
     # root directory
+    listen ${NGINX_PORT} default_server;
     root   /phpipam;
 
     # phpipam
@@ -14,7 +15,7 @@ server {
 
     # php-fpm
     location ~ \.php$ {
-        fastcgi_pass   ${PHP_FPM_HOST}:9000;
+        fastcgi_pass   ${PHP_FPM_HOST}:${PHP_FPM_PORT};
         fastcgi_index  index.php;
         try_files      ${DLR}uri ${DLR}uri/ index.php = 404;
         include        fastcgi_params;
