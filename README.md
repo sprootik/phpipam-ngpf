@@ -35,8 +35,10 @@ A subset of available phpIPAM configuration settings in [config.dist.php](https:
 
 | ENV                          | Default                 | WWW/CRON Container | Description                                                                                     |
 |------------------------------|-------------------------|:------------------:|-------------------------------------------------------------------------------------------------|
-| **PHP_FPM_HOST**             | "127.0.0.1"             |        ✅ ❌       | Name/address php-fpm server for nginx config
-| **TZ**                       | "UTC"                   |        ✅ ✅       | Time Zone (e.g "Asia/Vladivostok")                                                                 |
+| **PHP_FPM_HOST**             | "127.0.0.1"             |        ✅ ❌       | Name/address php-fpm server for nginx config                                                    |
+| **PHP_FPM_PORT**             | "9000"                  |        ✅ ❌       | Port of php-fpm server for nginx config                                                         |
+| **NGINX_PORT**               | "80"                    |        ✅ ❌       | Nginx port for nginx config                                                                     |
+| **TZ**                       | "UTC"                   |        ✅ ✅       | Time Zone (e.g "Asia/Vladivostok")                                                              |
 | **IPAM_DATABASE_HOST** 📂    | "127.0.0.1"             |        ✅ ✅       | MySQL database host                                                                             |
 | **IPAM_DATABASE_USER** 📂    | "phpipam"               |        ✅ ✅       | MySQL database user                                                                             |
 | **IPAM_DATABASE_PASS** 📂    | "phpipamadmin"          |        ✅ ✅       | MySQL database password                                                                         |
