@@ -2,7 +2,7 @@ version: '3'
 
 services:
   phpipam-nginx:
-    image: phpipam-ngpf:latest
+    image: nixit89/phpipam-ngpf:latest
     ports:
       - "80:80"
     environment:
@@ -21,7 +21,7 @@ services:
       - phpipam-mariadb
 
   phpipam-fpm:
-    image: phpipam-ngpf:latest
+    image: nixit89/phpipam-ngpf:latest
     environment:
       - MODE=php-fpm
       - TZ=Asia/Vladivostok
@@ -34,7 +34,7 @@ services:
       - phpipam-mariadb
 
   phpipam-cron:
-    image: phpipam-ngpf-cron:v1.5.0
+    image: nixit89/phpipam-ngpf-cron:v1.5.0
     environment:
       - TZ=Asia/Vladivostok
       - IPAM_DATABASE_HOST=phpipam-mariadb
